@@ -132,7 +132,7 @@ class App(QMainWindow):
         }
 
         out_df = pd.DataFrame(out_data, index=np.arange(y.shape[0]) * 10)
-        out_df.to_csv(path_or_buf='output.csv', encoding='utf-8-sig')
+        out_df.to_excel('output.xlsx', encoding='utf-8-sig')
 
         if not norm:
             y_variable = denormalize_data(y_variable, norm_values)
@@ -154,7 +154,7 @@ class App(QMainWindow):
         ax3.legend()
         ax3.title.set_text('Достовірність датчику')
         plt.savefig('./plot.png')
-        os.startfile('output.csv')
+        os.startfile('output.xlsx')
     
     
     
