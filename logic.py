@@ -155,7 +155,7 @@ def get_ranges(lengths):
 
 
 def create_equation_matrix(x, polynomial_type='сhebyshev_first', polynomial_degree=2):
-    
+    print(polynomial_type)
     polynomial_function = polynomial(polynomial_type)
         
     A = np.empty((x.shape[0], x.shape[1] * polynomial_degree), dtype=np.float32)

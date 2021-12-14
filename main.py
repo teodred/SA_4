@@ -35,15 +35,15 @@ class App(QMainWindow):
     def compute(self):
         window_size = 10
         if self.ui.cheb_first.isChecked():
-            polynom_type = 'cheb_first'
+            polynom_type = 'chebyshev_first'
         elif self.ui.cheb_sec.isChecked():
-            polynom_type = 'cheb_sec'
+            polynom_type = 'chebyshev_second'
         elif self.ui.lag.isChecked():
-            polynom_type = 'lag'
+            polynom_type = 'laguerre'
         elif self.ui.ermit.isChecked():
-            polynom_type = 'ermit'
+            polynom_type = 'hermite'
         elif self.ui.lej.isChecked():
-            polynom_type = 'lej'
+            polynom_type = 'legendre'
         else:
             polynom_type = 'error'
         print(polynom_type)
@@ -52,7 +52,6 @@ class App(QMainWindow):
         dim_x2 = int(self.ui.x1_grade.text())
         dim_x3 = int(self.ui.x1_grade.text())
 
-        print(polynom_type)
         if self.ui.add.isChecked():
             model_type = 'add'
             mult = False
@@ -146,6 +145,7 @@ class App(QMainWindow):
         ax2.plot(risk)
         ax3.plot(trustworthness)
         plt.savefig('./plot.png')
+        os.startfile('output.csv')
     
     
     
