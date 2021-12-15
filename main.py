@@ -135,8 +135,8 @@ class App(QMainWindow):
         out_df.to_excel('output.xlsx', encoding='utf-8-sig')
 
         if not norm:
-            y_variable = denormalize_data(y_variable, norm_values)
-            approx_values = denormalize_data(approx_values, norm_values)
+            y_variable = denormalize_data(y_variable, [y_norm_values[0][y_cord -1], y_norm_values[1][y_cord -1]])
+            approx_values = denormalize_data(approx_values, [y_norm_values[0][y_cord -1], y_norm_values[1][y_cord -1]])
 
         fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(16, 9))
 
